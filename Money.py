@@ -22,10 +22,11 @@ class MoneyInfo:
         return str(self.__moneyCollected)+'$'
 
     def set_money_collected(self, value):
-        # Update the money collected after purchasing a drink
+        # Update the money collected machine after purchasing a drink
         self.__moneyCollected += value
 
     def money_check(self, coke, amount):
+        # To check if entered amount is sufficient/valid
         price_menu = self.get_price_menu()
         if amount < 0:
             raise InvalidAmount("Please insert a valid amount")
@@ -33,6 +34,7 @@ class MoneyInfo:
             raise InsufficientAmount(f"Apologies!, {amount}$ is insufficient to get {coke}.Money refunded")
 
     def money_transaction(self, coke, amount):
+        # Money transaction
         try:
             # print("Insert the amount: ")
             price_menu = self.get_price_menu()
